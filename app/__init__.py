@@ -148,6 +148,9 @@ def get_post(id):
 
     return render_template('detail_blog.html', url=os.getenv("URL"), title=post.title, post=post)
 
+@app.route('/health', methods=['GET'])
+def check_health():
+    return Response('SUCCESS', status=200)
 
 def get_posts():
     posts = Blog.query.order_by(Blog.date_created).all()
