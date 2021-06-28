@@ -2,8 +2,9 @@ import os
 from flask import Flask, request, Response, render_template, send_file, send_from_directory, jsonify
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
-from db import db_init, db
-from models import Blog
+from . import db
+# from db import get_db
+# from models import Blog
 import smtplib
 
 load_dotenv()
@@ -11,8 +12,9 @@ app = Flask(__name__)
  
 app.secret_key = 'development key'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-db_init(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['DATABASE'] = os.path.join(os.getcwd(), 'flask.sqlite')
+db.init_app(app)
 
 headerInfo = {
     'img':'./static/img/coverimg.jpg',
