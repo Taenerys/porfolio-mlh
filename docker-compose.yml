@@ -30,5 +30,5 @@ services:
         depends_on: 
             - web
     
-    volumes:
-        nginx_secrets:
+volumes:
+    nginx_secrets:
