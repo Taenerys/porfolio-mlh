@@ -1,0 +1,25 @@
+name: Docker
+
+on:
+  # Trigger the workflow on push and pull request,
+  # but only on the main branch
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-image:
+    name: Build Docker images
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Build and push
+        uses: docker/build-push-action@v2.6.1
+        with:
+          context: ./
