@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, Response, render_template, send_file, send_from_directory, jsonify
+from flask import Flask, request, Response, render_template
 from werkzeug.utils import secure_filename
 from werkzeug.security import check_password_hash, generate_password_hash
 from dotenv import load_dotenv
@@ -9,7 +9,6 @@ import smtplib
 
 load_dotenv()
 app = Flask(__name__)
- 
 app.secret_key = 'development key'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}'.format(

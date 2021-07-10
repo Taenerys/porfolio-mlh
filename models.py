@@ -1,5 +1,4 @@
 from datetime import datetime
-from logging import NullHandler
 from db import db
 
 class Blog(db.Model):
