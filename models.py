@@ -2,6 +2,7 @@ from datetime import datetime
 from logging import NullHandler
 from db import db
 
+
 class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
