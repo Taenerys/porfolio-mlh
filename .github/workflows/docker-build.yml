@@ -2,13 +2,13 @@ name: Docker
 
 on:
   # Trigger the workflow on push and pull request,
-  # but only on the main branch
+  # but only on the master branch
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build-image:
