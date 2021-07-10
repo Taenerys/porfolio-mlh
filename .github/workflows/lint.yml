@@ -32,4 +32,5 @@ jobs:
         with:
           black: true
           flake8: true
-          auto_fix: true 
+          auto_fix: true
+          exclude: "migrations/*" 
